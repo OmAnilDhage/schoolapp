@@ -1,0 +1,37 @@
+<h2>Enter Student Marks</h2>
+<form method="POST">
+Name: <input name="name" required><br><br>
+Class: <input name="class" required><br><br>
+Roll No: <input name="roll" required><br><br>
+
+Exam Type:
+<select name="exam_type" id="exam_type" onchange="toggleUnit()" required>
+    <option value="Term">Term</option>
+    <option value="Unit">Unit</option>
+</select><br><br>
+
+<div id="unit_section" style="display:none;">
+    Unit Test Total (Out Of):
+    <select name="unit_total">
+        <option value="20">20</option>
+        <option value="40">40</option>
+    </select><br><br>
+</div>
+
+<h3>Marks</h3>
+English: <input type="number" name="eng" required><br>
+Hindi: <input type="number" name="hin" required><br>
+Marathi: <input type="number" name="mar" required><br>
+Maths P1: <input type="number" name="mat1" required> P2: <input type="number" name="mat2" required><br>
+Science P1: <input type="number" name="sci1" required> P2: <input type="number" name="sci2" required><br>
+History: <input type="number" name="hist" required> Geography: <input type="number" name="geo" required><br><br>
+
+<button type="submit">Generate Result</button>
+</form>
+
+<script>
+function toggleUnit() {
+    var examType = document.getElementById("exam_type").value;
+    document.getElementById("unit_section").style.display = (examType === "Unit") ? "block" : "none";
+}
+</script>

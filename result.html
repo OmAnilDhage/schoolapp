@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Progress Card</title>
+<style>
+    body { font-family: Arial; text-align: center; border: 5px solid #333; padding: 20px; width: 300px; margin: auto; }
+    .pass { color: green; font-weight: bold; }
+    .fail { color: red; font-weight: bold; }
+</style>
+</head>
+<body>
+    <h2>Progress Report</h2>
+    <p>Name: {{ s[3] }} | Class: {{ s[1] }}</p>
+    <p>Exam: {{ s[4] }} | Roll: {{ s[2] }}</p>
+    <hr>
+    <p>Total Marks: {{ s[11] }}</p>
+    <p>Percentage: {{ s[12] }}%</p>
+    <p>Grade: {{ s[13] }}</p>
+    <p>Status: <span class="{{ s[14]|lower }}">{{ s[14] }}</span></p>
+    <p>Remarks: {{ s[15] }}</p>
+    <button onclick="window.print()">Print Report</button>
+    <br><br>
+    <a href="/form">New Entry</a>
+</body>
+</html>
